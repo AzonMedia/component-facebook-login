@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace GuzabaPlatform\Roles;
+namespace GuzabaPlatform\Facebook\Login;
 
 use GuzabaPlatform\Components\Base\Interfaces\ComponentInterface;
 use GuzabaPlatform\Components\Base\Traits\ComponentTrait;
