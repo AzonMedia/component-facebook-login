@@ -12,7 +12,7 @@ use GuzabaPlatform\Platform\Authentication\Controllers\Auth;
 
 /**
  * Class ClassInitialization
- * @package GuzabaPlatform\RequestCaching
+ * @package GuzabaPlatform\Facebook\Login
  */
 class ClassInitialization extends Base implements ClassInitializationInterface
 {
