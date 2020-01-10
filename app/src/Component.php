@@ -8,7 +8,7 @@ use GuzabaPlatform\Components\Base\Traits\ComponentTrait;
 
 /**
  * Class Component
- * @package Azonmedia\Tags
+ * @package GuzabaPlatofrm\Facebook\Login
  */
 class Component implements ComponentInterface
 {
