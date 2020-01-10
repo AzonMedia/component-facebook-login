@@ -2,7 +2,7 @@
     "name": "guzaba-platform/facebook-login",
     "type": "guzaba-platform-component",
     "description": "GuzabaPlatform Facebook login component",
-    "keywords": ["role management"],
+    "keywords": ["facebook login"],
     "homepage": "https://github.com/AzonMedia/component-facebook-login",
     "license": "BSD-3-Clause",
     "minimum-stability": "dev",
