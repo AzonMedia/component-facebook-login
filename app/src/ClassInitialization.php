@@ -8,7 +8,7 @@ use Guzaba2\Event\Event;
 use Guzaba2\Kernel\Interfaces\ClassInitializationInterface;
 use Guzaba2\Mvc\ExecutorMiddleware;
 use GuzabaPlatform\Facebook\Login\Hooks\AfterLoginMain;
-use GuzabaPlatform\Platform\Authentication\Controllers\Login;
+use GuzabaPlatform\Platform\Authentication\Controllers\Auth;
 
 /**
  * Class ClassInitialization
@@ -40,6 +40,6 @@ class ClassInitialization extends Base implements ClassInitializationInterface
             $Controller->set_response( (new AfterLoginMain($Controller->get_response()))() );
         };
         $Events = self::get_service('Events');
-        $Events->add_class_callback(Login::class, '_after_main', $Callback);
+        $Events->add_class_callback(Auth::class, '_after_main', $Callback);
     }
 }

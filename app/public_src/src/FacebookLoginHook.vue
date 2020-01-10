@@ -1,5 +1,5 @@
 <template>
-    
+    <div>Facebook login button</div>
 </template>
 
 <script>

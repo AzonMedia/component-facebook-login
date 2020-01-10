@@ -15,9 +15,9 @@ class AfterLoginMain extends AfterControllerMethodHook
         $struct = $Body->getStructure();
 
         //$struct['hooks']['_after_main']['name'] = realpath(dirname(__FILE__).'/../../public_src/FacebookLoginHook.vue');
-        $struct['hooks']['_after_main']['vue'] = '@GuzabaPlatform.Facebook.Login/FacebookLoginHook';
-        $struct['hooks']['_after_main']['data'] = [
-            'some_data' => 'blah',
+        $struct['hooks']['_after_main'][] = [
+            'name'  => '@GuzabaPlatform.Facebook.Login/FacebookLoginHook.vue',
+            'data'  => 'some db data',
         ];
         $Response = $Response->withBody( new Structured($struct) );
         return $Response;
