@@ -6,6 +6,7 @@ namespace GuzabaPlatform\Facebook\Login;
 use Guzaba2\Base\Base;
 use Guzaba2\Event\Event;
 use Guzaba2\Kernel\Interfaces\ClassInitializationInterface;
+use Guzaba2\Mvc\Controller;
 use Guzaba2\Mvc\ExecutorMiddleware;
 use GuzabaPlatform\Facebook\Login\Hooks\AfterLoginMain;
 use GuzabaPlatform\Platform\Authentication\Controllers\Auth;
@@ -33,13 +34,7 @@ class ClassInitialization extends Base implements ClassInitializationInterface
 
     public static function register_login_hook() : void
     {
-
-        $Callback = static function(Event $Event) : void
-        {
-            $Controller = $Event->get_subject();
-            $Controller->set_response( (new AfterLoginMain($Controller->get_response()))() );
-        };
-        $Events = self::get_service('Events');
-        $Events->add_class_callback(Auth::class, '_after_main', $Callback);
+        //Controller::register_after_hook(Auth::class, '_after_main', AfterLoginMain::class, 'execute_hook');
+        Controller::register_after_hook(Auth::class, '_after_main', [ new AfterLoginMain(), 'execute_hook' ] );
     }
 }
